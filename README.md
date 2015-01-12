@@ -1,17 +1,16 @@
 sensu_roles Cookbook
 ====================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook makes sensu monitor, sensu client.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
+TODO: add some descriptions if requirements exists.
+
 #### packages
-- `toaster` - sensu_roles needs toaster to brown your bagel.
+
+- `sensu` - sensu_roles depends on [sensu-chef](https://github.com/sensu/sensu-chef) cookbook.
 
 Attributes
 ----------
@@ -36,17 +35,24 @@ e.g.
 
 Usage
 -----
-#### sensu_roles::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `sensu_roles` in your node's `run_list`:
+#### sensu_roles::monitor
 
 ```json
 {
-  "name":"my_node",
+  "name":"sensu_monitor",
   "run_list": [
-    "recipe[sensu_roles]"
+    "recipe[sensu_roles::monitor]"
+  ]
+}
+```
+
+#### sensu_roles::client
+
+```json
+{
+  "name":"sensu_client",
+  "run_list": [
+    "recipe[sensu_roles::client]"
   ]
 }
 ```
